@@ -22,10 +22,5 @@
   },
   "require-dev": {
     "phpunit/php-invoker": "@stable"
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "4.x-dev"
-    }
   }
 }
