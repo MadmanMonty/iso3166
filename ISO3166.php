@@ -127,9 +127,11 @@ class ISO3166 implements \IteratorAggregate, DataProvider
             ));
         }
 
-        foreach ($this->countries as $country) {
-            yield $country[$listBy] => $country;
+        foreach ($this->countries as $key => $country) {
+            $this->countries[$key][$listBy] = $country;
         }
+        
+        return $this->countries;
     }
 
     /**
@@ -139,9 +141,12 @@ class ISO3166 implements \IteratorAggregate, DataProvider
      */
     public function getIterator()
     {
+        $x = array();
         foreach ($this->countries as $country) {
-            yield $country;
+            $x[] = $country;
         }
+        
+        return $x;
     }
 
     /**
